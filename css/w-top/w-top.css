@@ -50,6 +50,7 @@
   border-left: 1px solid #fff;
 }
 .w-top-navigation-item:hover {
+  -webkit-animation: all 2s;
   background-color: #f4f4f4;
   background: -webkit-gradient(linear, left top, left bottom, from(#f4f4f4), to(#ffa500));
   background: -webkit-linear-gradient(top, #f4f4f4, #ffa500);
@@ -83,6 +84,15 @@
   display: none;
 }
 @media screen and (max-width: 700px) {
+  body {
+    padding-top: 60px;
+  }
+  .w-top {
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+  }
   .w-top-navigation {
     display: none;
   }

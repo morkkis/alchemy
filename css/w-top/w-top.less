@@ -46,6 +46,7 @@
 }
 
 .w-top-navigation-item:hover {
+    -webkit-animation: all 2s;
     .gradient (rgb(244, 244, 244), @secondary);
 }
 
@@ -76,6 +77,17 @@
 
 @media screen and (max-width: 700px) {
 
+    body {
+        padding-top: 60px;
+    }
+    
+    .w-top {
+        left: 0;
+        position: fixed;
+        right: 0;
+        top: 0;
+    }
+    
     .w-top-navigation {
         display: none;
     }
