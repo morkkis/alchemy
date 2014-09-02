@@ -1,0 +1,143 @@
+@import "../mixins/mixins.less";
+@import "../mixins/colors.less";
+
+
+.w-top {
+    border-bottom: 2px solid @primary;
+    .gradient (rgb(244, 244, 244), rgb(227, 227, 227));
+    height: 50px;
+    position: relative;
+}
+
+.w-top-logo-ph {
+    .gradient (rgb(227, 227, 227), rgb(244, 244, 244));
+    color: @secondary;
+    display: block;
+    font-size: 28px;
+    height: 100%;
+    left: 0;
+    line-height: 50px;
+    margin-left: 10px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 150px;
+}
+
+.w-top-navigation {
+    text-align: center;
+}
+
+.w-top-navigation-item {
+    border-right: 1px solid #fff;
+    .inner-shadow (1px, -1px, 1px, -1px, .2);
+    color: @primary;
+    display: inline-block;
+    height: 48px;
+    line-height: 48px;
+    margin-left: -4px;
+    padding: 0 20px;
+    position: relative;
+    text-decoration: none;
+}
+
+.w-top-navigation-item:first-child {
+    border-left: 1px solid #fff;
+}
+
+.w-top-navigation-item:hover {
+    .gradient (rgb(244, 244, 244), @secondary);
+}
+
+.w-top-navigation-item.active {
+        .gradient (rgb(244, 244, 244), rgb(237, 237, 237));
+}
+
+.w-top-navigation-item.active:before {
+    border-top: 3px solid @secondary;
+    content: '';
+    display: block;
+    left: 50%;
+    margin-left: -25%;
+    position: absolute;
+    width: 50%;
+}
+
+
+#MenuToggle {
+    position: absolute;
+    left: -9999px;
+    display: none;
+}
+.e-menu-toggle {
+    display: none;
+}
+
+
+@media screen and (max-width: 700px) {
+
+    .w-top-navigation {
+        display: none;
+    }
+
+    #MenuToggle:checked ~ .w-top-navigation {
+        background-color: rgb(255, 255, 255);
+        bottom: 0;
+        display: block;
+        left: 0;
+        position: fixed;
+        right: 0;
+        top: 50px;
+        
+    }
+
+    #MenuToggle:checked ~ .w-top-navigation .w-top-navigation-item{
+        display: block;
+        margin-left: 0;
+        width: 100%;
+    }
+    
+      #MenuToggle:checked ~ .w-top-navigation .w-top-navigation-item.active:before {
+        background-color: @secondary;
+        border: 0;
+        content: '';
+        display: block;
+        height: 100%;
+        left: 0;
+          margin-left: 0;
+        width: 10px;
+}
+
+    .e-menu-toggle {
+        display: block;
+        width: 30px;
+        height: 25px;
+        border: 5px solid @primary;
+        border-width: 5px 0;
+        position: absolute;
+        right: 20px;
+        top: 10px;
+        cursor: pointer;
+        z-index: 500;
+    }
+
+    .e-menu-toggle:before, .e-menu-toggle:after {
+        content: "";
+        display: block;
+        width: 30px;
+        height: 5px;
+        background: @primary;
+        position: absolute;
+        left: 0;
+        top: 5px;
+    }
+
+    .e-menu-toggle span {
+        position: absolute;
+        left: -9999px;
+    }
+
+
+
+
+}
